@@ -1,13 +1,14 @@
 language: python
+
 env:
   global:
-   - REPO_DIR=/home/travis/build/helmqa-chart-repo
-   - REPO_URL=https://github.com/mohammed-ali-1/helmqa-chart-repo.git
-   - HELMQA_URL=https://helmqa-helmqa.a3c1.starter-us-west-1.openshiftapps.com
-   - HELM_URL=https://storage.googleapis.com/kubernetes-helm
-   - HELM_TGZ=helm-v2.9.1-linux-amd64.tar.gz
-   - OUT_DIR=out
-   - secure: "kN7sCgg//K6MCKI342fqV33vDvKMKTPiPVHIB4EgN1HMMDAM/pxp2tyf1jS4zD27nGaGbi3eV5IDC7zvQL4Kw0OvAIW9NsntKW0PEcqXUDiF+ENIdm8o4/liCj+R6kt3Mp47SGQeRnAv9PHMX9t0g57YAUFtIHlGAdcuLgUwGjd9F6e+EDJVLcwOS9iDDdmkvs46o6kOqHRks2+8QO4NGsjq9yxemt0r5UPZA4zMQTq/WhhssQzt0xkLmB5gNNjT/ra/R9wWPFG8tcSNeH7Yp4SuSs0v+L9w+HpjI1WYoAehKMpMvVYGw+nb+0l7ZnnskiyV2uPQSxfzyx22aw6vGxkfrZNMLpllyarBwxji1KPb7H4jjc2X4jWJ/TxM/6K8CPLG/yPXYEJA0n870ZaZxkJZlK0XMlwB8Xl2VF5wtQSU9gx/eZJeXQby5E3yGMdE+N97ujmND/Pd9CMBMezl2Oll/o6xQ5NjCTZvFxqfoY3TZZB1cOHIbs73TMlQjtIbXhbTYW7Yvt09jV33qCdkF8pCsPrRyYLGyk4vr4L6LH/HtjDGAC0LDHsrAJczIGWqvq5va3ewI280IhsQNtGNZ0ihSCrUTGQHxQFTZnAkIHuBPvh/k6M0AKoE79X4vlAGAQSOK2sxZFTZwp0mtSt/qt8501mgK0G/Xkl6Pewaq9A="
+    - secure: "kN7sCgg//K6MCKI342fqV33vDvKMKTPiPVHIB4EgN1HMMDAM/pxp2tyf1jS4zD27nGaGbi3eV5IDC7zvQL4Kw0OvAIW9NsntKW0PEcqXUDiF+ENIdm8o4/liCj+R6kt3Mp47SGQeRnAv9PHMX9t0g57YAUFtIHlGAdcuLgUwGjd9F6e+EDJVLcwOS9iDDdmkvs46o6kOqHRks2+8QO4NGsjq9yxemt0r5UPZA4zMQTq/WhhssQzt0xkLmB5gNNjT/ra/R9wWPFG8tcSNeH7Yp4SuSs0v+L9w+HpjI1WYoAehKMpMvVYGw+nb+0l7ZnnskiyV2uPQSxfzyx22aw6vGxkfrZNMLpllyarBwxji1KPb7H4jjc2X4jWJ/TxM/6K8CPLG/yPXYEJA0n870ZaZxkJZlK0XMlwB8Xl2VF5wtQSU9gx/eZJeXQby5E3yGMdE+N97ujmND/Pd9CMBMezl2Oll/o6xQ5NjCTZvFxqfoY3TZZB1cOHIbs73TMlQjtIbXhbTYW7Yvt09jV33qCdkF8pCsPrRyYLGyk4vr4L6LH/HtjDGAC0LDHsrAJczIGWqvq5va3ewI280IhsQNtGNZ0ihSCrUTGQHxQFTZnAkIHuBPvh/k6M0AKoE79X4vlAGAQSOK2sxZFTZwp0mtSt/qt8501mgK0G/Xkl6Pewaq9A="
+    - REPO_DIR=/home/travis/build/helmqa-chart-repo
+    - REPO_URL=https://github.com/mohammed-ali-1/helmqa-chart-repo.git
+    - HELMQA_URL=https://helmqa-helmqa.a3c1.starter-us-west-1.openshiftapps.com
+    - HELM_URL=https://storage.googleapis.com/kubernetes-helm
+    - HELM_TGZ=HELM_TGZ=helm-v2.9.1-linux-amd64.tar.gz
+    - OUT_DIR=out
 
 before_install:
   - chmod +x .ci/build.sh
@@ -31,3 +32,4 @@ deploy:
   keep-history: true
   on:
     branch: master
+
