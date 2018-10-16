@@ -1,0 +1,35 @@
+language: python
+
+env:
+  global:
+   - REPO_DIR=/home/travis/build/hello-world-chart-repo
+   - REPO_URL=https://github.com/mohammed-ali-1/hello-world-chart-repo.git
+   - HELMQA_URL=https://helmqa-helmqa.a3c1.starter-us-west-1.openshiftapps.com
+   - HELM_URL=https://storage.googleapis.com/kubernetes-helm
+   - HELM_TGZ=helm-v2.9.1-linux-amd64.tar.gz
+   - OUT_DIR=out    
+   - secure: rTkbQsCQWG+yNb39FhX1AAUgKIGDqK67br/UOaUCYcfRD7CzAaK/JpmpH4Ts4H24JmlwrVU/DHg/mZhQO4pySF0JhAG/VyQsbxR0Xi03rZkw6KvnYG5mOsitggqK1niKAcXe0zUjqkG721aS/1w3GxCw7tJW+0zBTPN8f8GFtGVChqEsVWJI95Gm5RfH/G99CkLPQtko08fDmXtozrFy4OE634K75hNU1GVf0ZMoQAr0tO5vzxL1Iq+QeWcMkvrJePoCkfRuUwC1TChA/WYr9x0jJiooMKV4zIHzrpem+n194aPvp5HC+rUM6LodnnlZe//Hq2o+RgBiW9JG+q7JLGmGLDrypQs0q+P2wEYib0udevvlQNCK6iLN2Fljf/5dseFDiZS8pmEdcgcAj6+Lr+swyAGrMY5TuVnufCUwqrvU2MjK/68zKfRVSkwq/ZCI0UM9JsQFzN02oWRYFPYtUlhnBcZjQKuHlFHx3iPEvMZQ0N+1DIAzx10YHK+OXSqgmwKI5kpIYRTDT0D8NMpMO8hzB0EK9HVnR80kqrogGy/6+WpWjcCcf/QTj2DVcCQcGVwyYq1uBgnx22+Ie77PKf93EUgccf3e/kf/BlNun1YtqfSJbTpI5w9ywnY2N8NIlvZfRXG78ZRHxy6yDWP3c878gMlu7yNGfuPh0gl4MNc=
+
+before_install:
+ - chmod +x .ci/build.sh
+
+install:
+ - curl -sSLo /tmp/helm.tgz "${HELM_URL}/${HELM_TGZ}"
+ - tar -xzvf /tmp/helm.tgz
+ - PATH=$(pwd)/linux-amd64/:$PATH
+ - helm init --client-only
+ - sudo apt-get install jq
+
+before_script:
+ - git fetch origin gh-pages
+
+script: ./.ci/build.sh
+
+deploy:
+  provider: pages
+  local-dir: $OUT_DIR
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  on:
+    branch: master
