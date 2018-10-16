@@ -7,7 +7,7 @@ env:
     - REPO_URL=https://github.com/mohammed-ali-1/helmqa-chart-repo.git
     - HELMQA_URL=https://helmqa-helmqa.a3c1.starter-us-west-1.openshiftapps.com
     - HELM_URL=https://storage.googleapis.com/kubernetes-helm
-    - HELM_TGZ=HELM_TGZ=helm-v2.9.1-linux-amd64.tar.gz
+    - HELM_TGZ=helm-v2.9.1-linux-amd64.tar.gz
     - OUT_DIR=out
 
 before_install:
