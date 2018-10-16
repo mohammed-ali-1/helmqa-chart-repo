@@ -1,35 +1,30 @@
 language: python
-
 env:
   global:
-   - REPO_DIR=/home/travis/build/helmqa-chart-repo
-   - REPO_URL=https://github.com/mohammed-ali-1/helmqa-chart-repo.git
-   - HELMQA_URL=https://helmqa-helmqa.a3c1.starter-us-west-1.openshiftapps.com
-   - HELM_URL=https://storage.googleapis.com/kubernetes-helm
-   - HELM_TGZ=helm-v2.9.1-linux-amd64.tar.gz
-   - OUT_DIR=out    
-   - secure: "rTkbQsCQWG+yNb39FhX1AAUgKIGDqK67br/UOaUCYcfRD7CzAaK/JpmpH4Ts4H24JmlwrVU/DHg/mZhQO4pySF0JhAG/VyQsbxR0Xi03rZkw6KvnYG5mOsitggqK1niKAcXe0zUjqkG721aS/1w3GxCw7tJW+0zBTPN8f8GFtGVChqEsVWJI95Gm5RfH/G99CkLPQtko08fDmXtozrFy4OE634K75hNU1GVf0ZMoQAr0tO5vzxL1Iq+QeWcMkvrJePoCkfRuUwC1TChA/WYr9x0jJiooMKV4zIHzrpem+n194aPvp5HC+rUM6LodnnlZe//Hq2o+RgBiW9JG+q7JLGmGLDrypQs0q+P2wEYib0udevvlQNCK6iLN2Fljf/5dseFDiZS8pmEdcgcAj6+Lr+swyAGrMY5TuVnufCUwqrvU2MjK/68zKfRVSkwq/ZCI0UM9JsQFzN02oWRYFPYtUlhnBcZjQKuHlFHx3iPEvMZQ0N+1DIAzx10YHK+OXSqgmwKI5kpIYRTDT0D8NMpMO8hzB0EK9HVnR80kqrogGy/6+WpWjcCcf/QTj2DVcCQcGVwyYq1uBgnx22+Ie77PKf93EUgccf3e/kf/BlNun1YtqfSJbTpI5w9ywnY2N8NIlvZfRXG78ZRHxy6yDWP3c878gMlu7yNGfuPh0gl4MNc="
-
+  - REPO_DIR=/home/travis/build/helmqa-chart-repo
+  - REPO_URL=https://github.com/mohammed-ali-1/helmqa-chart-repo.git
+  - HELMQA_URL=https://helmqa-helmqa.a3c1.starter-us-west-1.openshiftapps.com
+  - HELM_URL=https://storage.googleapis.com/kubernetes-helm
+  - HELM_TGZ=helm-v2.9.1-linux-amd64.tar.gz
+  - OUT_DIR=out
+  - secure: rTkbQsCQWG+yNb39FhX1AAUgKIGDqK67br/UOaUCYcfRD7CzAaK/JpmpH4Ts4H24JmlwrVU/DHg/mZhQO4pySF0JhAG/VyQsbxR0Xi03rZkw6KvnYG5mOsitggqK1niKAcXe0zUjqkG721aS/1w3GxCw7tJW+0zBTPN8f8GFtGVChqEsVWJI95Gm5RfH/G99CkLPQtko08fDmXtozrFy4OE634K75hNU1GVf0ZMoQAr0tO5vzxL1Iq+QeWcMkvrJePoCkfRuUwC1TChA/WYr9x0jJiooMKV4zIHzrpem+n194aPvp5HC+rUM6LodnnlZe//Hq2o+RgBiW9JG+q7JLGmGLDrypQs0q+P2wEYib0udevvlQNCK6iLN2Fljf/5dseFDiZS8pmEdcgcAj6+Lr+swyAGrMY5TuVnufCUwqrvU2MjK/68zKfRVSkwq/ZCI0UM9JsQFzN02oWRYFPYtUlhnBcZjQKuHlFHx3iPEvMZQ0N+1DIAzx10YHK+OXSqgmwKI5kpIYRTDT0D8NMpMO8hzB0EK9HVnR80kqrogGy/6+WpWjcCcf/QTj2DVcCQcGVwyYq1uBgnx22+Ie77PKf93EUgccf3e/kf/BlNun1YtqfSJbTpI5w9ywnY2N8NIlvZfRXG78ZRHxy6yDWP3c878gMlu7yNGfuPh0gl4MNc=
+  - secure: Nzu0CZb7pNWuE0q9lXDdmRHyRjWt8qOPvGgA8HEMeheIQjzzs4lFEYxEwrLxpkLWzjOYA1hwBOm9zF+Ng2zdkud1V1TFX4fVqCTjNEYNL9x+mRkzBXphugF/dalgaH6PTuJ+6paiMEtFVq4R/PfR0zQf792M9QZikQZu7Gou2JCa4N+eNY38zExgn2am4Lyr2zQ3rbUjpgrArm6SHvuFBwoPEaiiy1mwbJ6QA0wDJmSwrP+jQXFctO1QjyenNKYzOU2iXQjVmMdRkke1yOcgbdX+njO9W57c5zfABb4oUf+M3dcFa4j3AE44NwPRlWKU+rtScUYeCt9koVVcoVKTg53Q7+8qFy75633QqXASp9NOnPWRvXNG+IIcAXttYjCmWhcWx1ZKHF1vvT2JSpJ98hVAiZPv/Qb2kkbEOOaOt+mp4qwI74KSFXlSllackrvxRGN9sb6N2kilPccVTQZXfJfeyT8NAxpTNjpY6nIydxJjeTjTNSuP1cbFcn6Ykf4NoHrfXy9Ngi/cM9879H4sWSJvvapcUec88kZAxxGJ9U4AABORgEC61nFLljRauT62s02Y5ks32BWV4ZpkxxOcysmnWqK+QTt1yvJXPBYeIUzI7TdkLb9sS9RN9ud9xB7m4+qDPgQg2iE6BUzWpobZb7pBdyVU7P3+HBXNCKK19T0=
 before_install:
- - chmod +x .ci/build.sh
-
+- chmod +x .ci/build.sh
 install:
- - curl -sSLo /tmp/helm.tgz "${HELM_URL}/${HELM_TGZ}"
- - tar -xzvf /tmp/helm.tgz
- - PATH=$(pwd)/linux-amd64/:$PATH
- - helm init --client-only
- - sudo apt-get install jq
-
+- curl -sSLo /tmp/helm.tgz "${HELM_URL}/${HELM_TGZ}"
+- tar -xzvf /tmp/helm.tgz
+- PATH=$(pwd)/linux-amd64/:$PATH
+- helm init --client-only
+- sudo apt-get install jq
 before_script:
- - git fetch origin gh-pages
-
-script: ./.ci/build.sh
-
+- git fetch origin gh-pages
+script: "./.ci/build.sh"
 deploy:
   provider: pages
-  local-dir: $OUT_DIR
+  local-dir: "$OUT_DIR"
   skip-cleanup: true
-  github-token: $GITHUB_TOKEN
+  github-token: "$GITHUB_TOKEN"
   keep-history: true
   on:
     branch: master
